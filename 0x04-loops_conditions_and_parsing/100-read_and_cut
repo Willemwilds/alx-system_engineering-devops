@@ -1,0 +1,8 @@
+#!/bin/bash
+# This script display the content of /etc/password path
+
+while IFS=: read -r username _ userid _ _ home _; do
+  echo "Username: $username"
+  echo "User ID: $userid"
+  echo "Home Directory: $home"
+done < /etc/passwd

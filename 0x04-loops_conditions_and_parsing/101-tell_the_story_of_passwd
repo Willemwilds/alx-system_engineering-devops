@@ -1,0 +1,9 @@
+#!/bin/bash
+# This script still works on etc/padswird file
+
+while IFS=: read -r username password userid groupname home shell; do
+  echo "The user $username is part of the $groupname gang,"
+  echo "lives in $home and rides $shell."
+  echo "USER ID's place is protected by the passcode $password,"
+  echo "more info about the user here: $userid INFO"
+done < /etc/passwd
