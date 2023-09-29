@@ -2,4 +2,4 @@
 
 # This script displays a list of currently running processes.
 
-pstree -U -p
+ps aujf
