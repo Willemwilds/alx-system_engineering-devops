@@ -11,8 +11,11 @@ fi
 localhost_mapping="127.0.0.2 localhost"
 facebook_mapping="8.8.8.8 facebook.com"
 
-echo "$localhost_mapping" >> /etc/hosts
-echo "$facebook_mapping" >> /etc/hosts
-
+cp /etc/hosts ~/hosts.new
+sed -i '/localhost/d' ~/hosts.new
+sed -i '/facebook.com/d' ~/hosts.new
+echo "$localhost_mapping" >> ~/hosts.new
+echo "$facebook_mapping" >> ~/hosts.new
 echo "Configuration complete. Hostname mappings updated:"
 cat /etc/hosts
+cp -f ~/hosts.new /etc/hosts
