@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This scipt displays all active IPV4 IPs on the machine it's executed on.
 
-ifconfig | grep 'inet addr' | cut -d':' -f2 | cut -d' ' -f1
+ip a | grep "scope" | grep -Po '(?<=inet )[\d.]+'
